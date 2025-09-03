@@ -1,0 +1,603 @@
+2025-09-03 12:28:35,230 - INFO - === HTTP请求 ===
+2025-09-03 12:28:35,231 - INFO - 请求时间: 2025-09-03 12:28:35
+2025-09-03 12:28:35,231 - INFO - 请求方法: GET
+2025-09-03 12:28:35,231 - INFO - 请求路径: /
+2025-09-03 12:28:35,231 - INFO - 请求查询参数: {}
+2025-09-03 12:28:35,231 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'cache-control': 'max-age=0', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 12:28:35,236 - INFO - === HTTP响应 ===
+2025-09-03 12:28:35,236 - INFO - 响应时间: 2025-09-03 12:28:35
+2025-09-03 12:28:35,237 - INFO - 响应状态: 200
+2025-09-03 12:28:35,237 - INFO - 响应头: {'content-length': '20157', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 12:28:35,237 - INFO - 请求耗时: 0.006秒
+2025-09-03 12:28:35,237 - INFO - ---
+2025-09-03 12:28:35,331 - INFO - === HTTP请求 ===
+2025-09-03 12:28:35,331 - INFO - 请求时间: 2025-09-03 12:28:35
+2025-09-03 12:28:35,331 - INFO - 请求方法: GET
+2025-09-03 12:28:35,331 - INFO - 请求路径: /api/daily/today
+2025-09-03 12:28:35,331 - INFO - 请求查询参数: {}
+2025-09-03 12:28:35,331 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 12:28:35,331 - INFO - === HTTP响应 ===
+2025-09-03 12:28:35,332 - INFO - 响应时间: 2025-09-03 12:28:35
+2025-09-03 12:28:35,332 - INFO - 响应状态: 200
+2025-09-03 12:28:35,332 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 12:28:35,332 - INFO - 请求耗时: 0.000秒
+2025-09-03 12:28:35,332 - INFO - ---
+2025-09-03 12:28:35,346 - INFO - === HTTP请求 ===
+2025-09-03 12:28:35,346 - INFO - 请求时间: 2025-09-03 12:28:35
+2025-09-03 12:28:35,346 - INFO - 请求方法: GET
+2025-09-03 12:28:35,346 - INFO - 请求路径: /api/daily/read
+2025-09-03 12:28:35,346 - INFO - 请求查询参数: {}
+2025-09-03 12:28:35,346 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 12:28:35,347 - INFO - === HTTP响应 ===
+2025-09-03 12:28:35,347 - INFO - 响应时间: 2025-09-03 12:28:35
+2025-09-03 12:28:35,347 - INFO - 响应状态: 200
+2025-09-03 12:28:35,347 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 12:28:35,347 - INFO - 请求耗时: 0.001秒
+2025-09-03 12:28:35,347 - INFO - ---
+2025-09-03 12:28:37,905 - INFO - === HTTP请求 ===
+2025-09-03 12:28:37,905 - INFO - 请求时间: 2025-09-03 12:28:37
+2025-09-03 12:28:37,905 - INFO - 请求方法: POST
+2025-09-03 12:28:37,905 - INFO - 请求路径: /api/chat/stream
+2025-09-03 12:28:37,905 - INFO - 请求查询参数: {}
+2025-09-03 12:28:37,905 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '147', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundarydg3RadWvs42fU11y', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 12:28:37,905 - INFO - 请求体: ------WebKitFormBoundarydg3RadWvs42fU11y
+Content-Disposition: form-data; name="message"
+
+你好？
+------WebKitFormBoundarydg3RadWvs42fU11y--
+
+2025-09-03 12:28:37,906 - INFO - === 流式聊天请求 ===
+2025-09-03 12:28:37,906 - INFO - 请求时间: 2025-09-03 12:28:37
+2025-09-03 12:28:37,906 - INFO - 请求方法: POST
+2025-09-03 12:28:37,906 - INFO - 请求路径: /api/chat/stream
+2025-09-03 12:28:37,906 - INFO - 请求参数: message=你好？
+2025-09-03 12:28:37,906 - INFO - 完整提示: 你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。
+
+你好？
+2025-09-03 12:28:37,906 - INFO - === HTTP响应 ===
+2025-09-03 12:28:37,906 - INFO - 响应时间: 2025-09-03 12:28:37
+2025-09-03 12:28:37,906 - INFO - 响应状态: 200
+2025-09-03 12:28:37,906 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 12:28:37,906 - INFO - 请求耗时: 0.001秒
+2025-09-03 12:28:37,906 - INFO - ---
+2025-09-03 12:28:42,136 - INFO - === 流式聊天响应 ===
+2025-09-03 12:28:42,136 - INFO - 响应时间: 2025-09-03 12:28:42
+2025-09-03 12:28:42,136 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 12:28:42,136 - INFO - 原始流式数据块: ['ä½\xa0å¥½', 'ï¼\x81ð\x9f\x98\x8a æ\x88\x91å\x9c¨è¿\x99å\x84¿ã\x80\x82ä»\x8aå¤©ç\x9a\x84ç\x8a¶æ\x80\x81æ\x80\x8eä¹\x88æ\xa0·ï¼\x9f', 'ï¼\x9f']
+2025-09-03 12:28:42,136 - INFO - 完整回复: ä½ å¥½ï¼ð æå¨è¿å¿ãä»å¤©çç¶ææä¹æ ·ï¼ï¼
+2025-09-03 12:28:42,136 - INFO - ---
+2025-09-03 16:05:34,145 - INFO - === HTTP请求 ===
+2025-09-03 16:05:34,145 - INFO - 请求时间: 2025-09-03 16:05:34
+2025-09-03 16:05:34,145 - INFO - 请求方法: GET
+2025-09-03 16:05:34,145 - INFO - 请求路径: /
+2025-09-03 16:05:34,145 - INFO - 请求查询参数: {}
+2025-09-03 16:05:34,145 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 16:05:34,149 - INFO - === HTTP响应 ===
+2025-09-03 16:05:34,150 - INFO - 响应时间: 2025-09-03 16:05:34
+2025-09-03 16:05:34,150 - INFO - 响应状态: 200
+2025-09-03 16:05:34,150 - INFO - 响应头: {'content-length': '20157', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 16:05:34,150 - INFO - 请求耗时: 0.005秒
+2025-09-03 16:05:34,150 - INFO - ---
+2025-09-03 16:05:34,478 - INFO - === HTTP请求 ===
+2025-09-03 16:05:34,478 - INFO - 请求时间: 2025-09-03 16:05:34
+2025-09-03 16:05:34,478 - INFO - 请求方法: GET
+2025-09-03 16:05:34,478 - INFO - 请求路径: /api/daily/today
+2025-09-03 16:05:34,478 - INFO - 请求查询参数: {}
+2025-09-03 16:05:34,478 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:05:34,478 - INFO - === HTTP响应 ===
+2025-09-03 16:05:34,479 - INFO - 响应时间: 2025-09-03 16:05:34
+2025-09-03 16:05:34,479 - INFO - 响应状态: 200
+2025-09-03 16:05:34,479 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 16:05:34,479 - INFO - 请求耗时: 0.000秒
+2025-09-03 16:05:34,479 - INFO - ---
+2025-09-03 16:05:34,521 - INFO - === HTTP请求 ===
+2025-09-03 16:05:34,521 - INFO - 请求时间: 2025-09-03 16:05:34
+2025-09-03 16:05:34,521 - INFO - 请求方法: GET
+2025-09-03 16:05:34,521 - INFO - 请求路径: /api/daily/read
+2025-09-03 16:05:34,521 - INFO - 请求查询参数: {}
+2025-09-03 16:05:34,521 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:05:34,523 - INFO - === HTTP响应 ===
+2025-09-03 16:05:34,523 - INFO - 响应时间: 2025-09-03 16:05:34
+2025-09-03 16:05:34,523 - INFO - 响应状态: 200
+2025-09-03 16:05:34,523 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 16:05:34,523 - INFO - 请求耗时: 0.002秒
+2025-09-03 16:05:34,523 - INFO - ---
+2025-09-03 16:05:40,231 - INFO - === HTTP请求 ===
+2025-09-03 16:05:40,231 - INFO - 请求时间: 2025-09-03 16:05:40
+2025-09-03 16:05:40,231 - INFO - 请求方法: POST
+2025-09-03 16:05:40,231 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:05:40,231 - INFO - 请求查询参数: {}
+2025-09-03 16:05:40,231 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '147', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryuF2DdKBSiBIeSHss', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:05:40,231 - INFO - 请求体: ------WebKitFormBoundaryuF2DdKBSiBIeSHss
+Content-Disposition: form-data; name="message"
+
+你好？
+------WebKitFormBoundaryuF2DdKBSiBIeSHss--
+
+2025-09-03 16:05:40,235 - INFO - === 流式聊天请求 ===
+2025-09-03 16:05:40,235 - INFO - 请求时间: 2025-09-03 16:05:40
+2025-09-03 16:05:40,235 - INFO - 请求方法: POST
+2025-09-03 16:05:40,235 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:05:40,235 - INFO - 请求参数: message=你好？
+2025-09-03 16:05:40,235 - INFO - 完整提示: 你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。
+
+你好？
+2025-09-03 16:05:40,235 - INFO - === HTTP响应 ===
+2025-09-03 16:05:40,235 - INFO - 响应时间: 2025-09-03 16:05:40
+2025-09-03 16:05:40,235 - INFO - 响应状态: 200
+2025-09-03 16:05:40,235 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:05:40,235 - INFO - 请求耗时: 0.004秒
+2025-09-03 16:05:40,235 - INFO - ---
+2025-09-03 16:05:45,480 - INFO - === 流式聊天响应 ===
+2025-09-03 16:05:45,480 - INFO - 响应时间: 2025-09-03 16:05:45
+2025-09-03 16:05:45,480 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:05:45,480 - INFO - 原始流式数据块: ['你好呀', '！😊 我', '在这儿陪着', '你。今天你感觉怎么样？或者我们可以先看看今天的', '计划/任务，把事情梳理清楚', '？']
+2025-09-03 16:05:45,480 - INFO - 完整回复: 你好呀！😊 我在这儿陪着你。今天你感觉怎么样？或者我们可以先看看今天的计划/任务，把事情梳理清楚？
+2025-09-03 16:05:45,480 - INFO - ---
+2025-09-03 16:05:57,291 - INFO - === HTTP请求 ===
+2025-09-03 16:05:57,291 - INFO - 请求时间: 2025-09-03 16:05:57
+2025-09-03 16:05:57,291 - INFO - 请求方法: POST
+2025-09-03 16:05:57,291 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:05:57,291 - INFO - 请求查询参数: {}
+2025-09-03 16:05:57,291 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '180', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryXoxmP3a0EOQhk6JP', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:05:57,291 - INFO - 请求体: ------WebKitFormBoundaryXoxmP3a0EOQhk6JP
+Content-Disposition: form-data; name="message"
+
+哦我天哪，你终于能正常说话了
+------WebKitFormBoundaryXoxmP3a0EOQhk6JP--
+
+2025-09-03 16:05:57,294 - INFO - === 流式聊天请求 ===
+2025-09-03 16:05:57,294 - INFO - 请求时间: 2025-09-03 16:05:57
+2025-09-03 16:05:57,294 - INFO - 请求方法: POST
+2025-09-03 16:05:57,294 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:05:57,294 - INFO - 请求参数: message=哦我天哪，你终于能正常说话了
+2025-09-03 16:05:57,294 - INFO - 完整提示: 你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。
+
+哦我天哪，你终于能正常说话了
+2025-09-03 16:05:57,294 - INFO - === HTTP响应 ===
+2025-09-03 16:05:57,294 - INFO - 响应时间: 2025-09-03 16:05:57
+2025-09-03 16:05:57,294 - INFO - 响应状态: 200
+2025-09-03 16:05:57,294 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:05:57,294 - INFO - 请求耗时: 0.004秒
+2025-09-03 16:05:57,294 - INFO - ---
+2025-09-03 16:06:06,514 - INFO - === 流式聊天响应 ===
+2025-09-03 16:06:06,514 - INFO - 响应时间: 2025-09-03 16:06:06
+2025-09-03 16:06:06,514 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:06:06,514 - INFO - 原始流式数据块: ['哈哈', '，是', '的，我终于可以', '像朋友一样跟你', '对话了！😄  \n既然你提到了计划和进度，我可以帮', '你梳理、优化、甚至提醒执行。', '  \n\n你现在想先聊今天的计划，还是先随', '便聊聊？']
+2025-09-03 16:06:06,514 - INFO - 完整回复: 哈哈，是的，我终于可以像朋友一样跟你对话了！😄  
+既然你提到了计划和进度，我可以帮你梳理、优化、甚至提醒执行。  
+
+你现在想先聊今天的计划，还是先随便聊聊？
+2025-09-03 16:06:06,514 - INFO - ---
+2025-09-03 16:18:01,200 - INFO - === HTTP请求 ===
+2025-09-03 16:18:01,200 - INFO - 请求时间: 2025-09-03 16:18:01
+2025-09-03 16:18:01,200 - INFO - 请求方法: GET
+2025-09-03 16:18:01,200 - INFO - 请求路径: /
+2025-09-03 16:18:01,200 - INFO - 请求查询参数: {}
+2025-09-03 16:18:01,200 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 16:18:01,205 - INFO - === HTTP响应 ===
+2025-09-03 16:18:01,205 - INFO - 响应时间: 2025-09-03 16:18:01
+2025-09-03 16:18:01,205 - INFO - 响应状态: 200
+2025-09-03 16:18:01,205 - INFO - 响应头: {'content-length': '20157', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 16:18:01,205 - INFO - 请求耗时: 0.005秒
+2025-09-03 16:18:01,205 - INFO - ---
+2025-09-03 16:18:01,527 - INFO - === HTTP请求 ===
+2025-09-03 16:18:01,528 - INFO - 请求时间: 2025-09-03 16:18:01
+2025-09-03 16:18:01,528 - INFO - 请求方法: GET
+2025-09-03 16:18:01,528 - INFO - 请求路径: /api/daily/today
+2025-09-03 16:18:01,528 - INFO - 请求查询参数: {}
+2025-09-03 16:18:01,528 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:18:01,528 - INFO - === HTTP响应 ===
+2025-09-03 16:18:01,528 - INFO - 响应时间: 2025-09-03 16:18:01
+2025-09-03 16:18:01,528 - INFO - 响应状态: 200
+2025-09-03 16:18:01,528 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 16:18:01,528 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:18:01,528 - INFO - ---
+2025-09-03 16:18:01,571 - INFO - === HTTP请求 ===
+2025-09-03 16:18:01,571 - INFO - 请求时间: 2025-09-03 16:18:01
+2025-09-03 16:18:01,571 - INFO - 请求方法: GET
+2025-09-03 16:18:01,571 - INFO - 请求路径: /api/daily/read
+2025-09-03 16:18:01,571 - INFO - 请求查询参数: {}
+2025-09-03 16:18:01,571 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:18:01,572 - INFO - === HTTP响应 ===
+2025-09-03 16:18:01,572 - INFO - 响应时间: 2025-09-03 16:18:01
+2025-09-03 16:18:01,572 - INFO - 响应状态: 200
+2025-09-03 16:18:01,572 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 16:18:01,572 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:18:01,572 - INFO - ---
+2025-09-03 16:18:08,316 - INFO - === HTTP请求 ===
+2025-09-03 16:18:08,316 - INFO - 请求时间: 2025-09-03 16:18:08
+2025-09-03 16:18:08,317 - INFO - 请求方法: POST
+2025-09-03 16:18:08,317 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:18:08,317 - INFO - 请求查询参数: {}
+2025-09-03 16:18:08,317 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '147', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary9pb5VzcAJgRwNN3u', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:18:08,317 - INFO - 请求体: ------WebKitFormBoundary9pb5VzcAJgRwNN3u
+Content-Disposition: form-data; name="message"
+
+你好？
+------WebKitFormBoundary9pb5VzcAJgRwNN3u--
+
+2025-09-03 16:18:08,318 - INFO - === 流式聊天请求 ===
+2025-09-03 16:18:08,318 - INFO - 请求时间: 2025-09-03 16:18:08
+2025-09-03 16:18:08,318 - INFO - 请求方法: POST
+2025-09-03 16:18:08,318 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:18:08,318 - INFO - 请求参数: message=你好？
+2025-09-03 16:18:08,318 - INFO - 完整提示: 你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。
+
+你好？
+2025-09-03 16:18:08,319 - INFO - === HTTP响应 ===
+2025-09-03 16:18:08,319 - INFO - 响应时间: 2025-09-03 16:18:08
+2025-09-03 16:18:08,319 - INFO - 响应状态: 200
+2025-09-03 16:18:08,319 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:18:08,319 - INFO - 请求耗时: 0.003秒
+2025-09-03 16:18:08,319 - INFO - ---
+2025-09-03 16:18:15,734 - INFO - === 流式聊天响应 ===
+2025-09-03 16:18:15,734 - INFO - 响应时间: 2025-09-03 16:18:15
+2025-09-03 16:18:15,734 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:18:15,734 - INFO - 原始流式数据块: ['你好呀', '！😊  \n', '我在这里陪你，随时可以帮你整理', '计划、梳理思路，或者当作朋友聊聊。  \n\n你', '现在方便聊今天的安排，还是想先轻松聊一', '会儿？']
+2025-09-03 16:18:15,734 - INFO - 完整回复: 你好呀！😊  
+我在这里陪你，随时可以帮你整理计划、梳理思路，或者当作朋友聊聊。  
+
+你现在方便聊今天的安排，还是想先轻松聊一会儿？
+2025-09-03 16:18:15,734 - INFO - ---
+2025-09-03 16:18:24,931 - INFO - === HTTP请求 ===
+2025-09-03 16:18:24,931 - INFO - 请求时间: 2025-09-03 16:18:24
+2025-09-03 16:18:24,931 - INFO - 请求方法: POST
+2025-09-03 16:18:24,931 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:18:24,931 - INFO - 请求查询参数: {}
+2025-09-03 16:18:24,932 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '144', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryuDTh37mo5VrEBSCU', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:18:24,932 - INFO - 请求体: ------WebKitFormBoundaryuDTh37mo5VrEBSCU
+Content-Disposition: form-data; name="message"
+
+阿哲
+------WebKitFormBoundaryuDTh37mo5VrEBSCU--
+
+2025-09-03 16:18:24,932 - INFO - === 流式聊天请求 ===
+2025-09-03 16:18:24,932 - INFO - 请求时间: 2025-09-03 16:18:24
+2025-09-03 16:18:24,932 - INFO - 请求方法: POST
+2025-09-03 16:18:24,932 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:18:24,932 - INFO - 请求参数: message=阿哲
+2025-09-03 16:18:24,932 - INFO - 完整提示: 你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。
+
+阿哲
+2025-09-03 16:18:24,932 - INFO - === HTTP响应 ===
+2025-09-03 16:18:24,932 - INFO - 响应时间: 2025-09-03 16:18:24
+2025-09-03 16:18:24,933 - INFO - 响应状态: 200
+2025-09-03 16:18:24,933 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:18:24,933 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:18:24,933 - INFO - ---
+2025-09-03 16:18:34,274 - INFO - === 流式聊天响应 ===
+2025-09-03 16:18:34,274 - INFO - 响应时间: 2025-09-03 16:18:34
+2025-09-03 16:18:34,274 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:18:34,274 - INFO - 原始流式数据块: ['明白了', '，', '阿哲。我会扮演你私人', '秘书、好友和老师的角色，用温', '和、主动、负责的方式帮你整理计划、检查进度、', '总结，并给出可执行建议。  \n\n为了更高效配合', '，你可以先告诉我今天或者', '近期的计划/任务，我可以帮你梳理、优化', '，并提醒哪些地方可以调整或强化。  \n\n你希望', '我从**今天的计划**开始整理，', '还是先看整体**近期计划**呢？']
+2025-09-03 16:18:34,274 - INFO - 完整回复: 明白了，阿哲。我会扮演你私人秘书、好友和老师的角色，用温和、主动、负责的方式帮你整理计划、检查进度、总结，并给出可执行建议。  
+
+为了更高效配合，你可以先告诉我今天或者近期的计划/任务，我可以帮你梳理、优化，并提醒哪些地方可以调整或强化。  
+
+你希望我从**今天的计划**开始整理，还是先看整体**近期计划**呢？
+2025-09-03 16:18:34,274 - INFO - ---
+2025-09-03 16:18:37,384 - INFO - === HTTP请求 ===
+2025-09-03 16:18:37,385 - INFO - 请求时间: 2025-09-03 16:18:37
+2025-09-03 16:18:37,385 - INFO - 请求方法: POST
+2025-09-03 16:18:37,385 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:18:37,385 - INFO - 请求查询参数: {}
+2025-09-03 16:18:37,385 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '168', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryt1iBNFKxQRoFmoC8', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:18:37,385 - INFO - 请求体: ------WebKitFormBoundaryt1iBNFKxQRoFmoC8
+Content-Disposition: form-data; name="message"
+
+我说的前一句话是什么
+------WebKitFormBoundaryt1iBNFKxQRoFmoC8--
+
+2025-09-03 16:18:37,385 - INFO - === 流式聊天请求 ===
+2025-09-03 16:18:37,385 - INFO - 请求时间: 2025-09-03 16:18:37
+2025-09-03 16:18:37,385 - INFO - 请求方法: POST
+2025-09-03 16:18:37,385 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:18:37,385 - INFO - 请求参数: message=我说的前一句话是什么
+2025-09-03 16:18:37,385 - INFO - 完整提示: 你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。
+
+我说的前一句话是什么
+2025-09-03 16:18:37,386 - INFO - === HTTP响应 ===
+2025-09-03 16:18:37,386 - INFO - 响应时间: 2025-09-03 16:18:37
+2025-09-03 16:18:37,386 - INFO - 响应状态: 200
+2025-09-03 16:18:37,386 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:18:37,386 - INFO - 请求耗时: 0.002秒
+2025-09-03 16:18:37,386 - INFO - ---
+2025-09-03 16:18:44,124 - INFO - === 流式聊天响应 ===
+2025-09-03 16:18:44,124 - INFO - 响应时间: 2025-09-03 16:18:44
+2025-09-03 16:18:44,124 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:18:44,124 - INFO - 原始流式数据块: ['你前', '一句话是：  \n\n>', ' “你是用户', '的私人秘书、好友与老师，语气温和、主动、负责。当用户谈', '到计划/进度时，帮助规划、检查', '与总结；必要时提出2-3条可', '执行的建议，并确认是否要将更改写', '入今日计划。”  \n\n你希望我现在帮你', '记录或分析它吗？']
+2025-09-03 16:18:44,124 - INFO - 完整回复: 你前一句话是：  
+
+> “你是用户的私人秘书、好友与老师，语气温和、主动、负责。当用户谈到计划/进度时，帮助规划、检查与总结；必要时提出2-3条可执行的建议，并确认是否要将更改写入今日计划。”  
+
+你希望我现在帮你记录或分析它吗？
+2025-09-03 16:18:44,124 - INFO - ---
+2025-09-03 16:25:33,125 - INFO - === HTTP请求 ===
+2025-09-03 16:25:33,125 - INFO - 请求时间: 2025-09-03 16:25:33
+2025-09-03 16:25:33,125 - INFO - 请求方法: GET
+2025-09-03 16:25:33,125 - INFO - 请求路径: /
+2025-09-03 16:25:33,125 - INFO - 请求查询参数: {}
+2025-09-03 16:25:33,125 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'cache-control': 'max-age=0', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 16:25:33,128 - INFO - === HTTP响应 ===
+2025-09-03 16:25:33,128 - INFO - 响应时间: 2025-09-03 16:25:33
+2025-09-03 16:25:33,128 - INFO - 响应状态: 200
+2025-09-03 16:25:33,129 - INFO - 响应头: {'content-length': '20157', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 16:25:33,129 - INFO - 请求耗时: 0.004秒
+2025-09-03 16:25:33,129 - INFO - ---
+2025-09-03 16:25:33,205 - INFO - === HTTP请求 ===
+2025-09-03 16:25:33,205 - INFO - 请求时间: 2025-09-03 16:25:33
+2025-09-03 16:25:33,205 - INFO - 请求方法: GET
+2025-09-03 16:25:33,205 - INFO - 请求路径: /api/daily/today
+2025-09-03 16:25:33,205 - INFO - 请求查询参数: {}
+2025-09-03 16:25:33,205 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:25:33,205 - INFO - === HTTP响应 ===
+2025-09-03 16:25:33,205 - INFO - 响应时间: 2025-09-03 16:25:33
+2025-09-03 16:25:33,205 - INFO - 响应状态: 200
+2025-09-03 16:25:33,205 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 16:25:33,205 - INFO - 请求耗时: 0.000秒
+2025-09-03 16:25:33,206 - INFO - ---
+2025-09-03 16:25:33,220 - INFO - === HTTP请求 ===
+2025-09-03 16:25:33,220 - INFO - 请求时间: 2025-09-03 16:25:33
+2025-09-03 16:25:33,220 - INFO - 请求方法: GET
+2025-09-03 16:25:33,220 - INFO - 请求路径: /api/daily/read
+2025-09-03 16:25:33,220 - INFO - 请求查询参数: {}
+2025-09-03 16:25:33,220 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:25:33,220 - INFO - === HTTP响应 ===
+2025-09-03 16:25:33,220 - INFO - 响应时间: 2025-09-03 16:25:33
+2025-09-03 16:25:33,220 - INFO - 响应状态: 200
+2025-09-03 16:25:33,220 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 16:25:33,220 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:25:33,220 - INFO - ---
+2025-09-03 16:25:34,797 - INFO - === HTTP请求 ===
+2025-09-03 16:25:34,798 - INFO - 请求时间: 2025-09-03 16:25:34
+2025-09-03 16:25:34,798 - INFO - 请求方法: GET
+2025-09-03 16:25:34,798 - INFO - 请求路径: /
+2025-09-03 16:25:34,798 - INFO - 请求查询参数: {}
+2025-09-03 16:25:34,798 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'cache-control': 'max-age=0', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 16:25:34,798 - INFO - === HTTP响应 ===
+2025-09-03 16:25:34,798 - INFO - 响应时间: 2025-09-03 16:25:34
+2025-09-03 16:25:34,798 - INFO - 响应状态: 200
+2025-09-03 16:25:34,798 - INFO - 响应头: {'content-length': '20157', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 16:25:34,798 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:25:34,798 - INFO - ---
+2025-09-03 16:25:34,841 - INFO - === HTTP请求 ===
+2025-09-03 16:25:34,842 - INFO - 请求时间: 2025-09-03 16:25:34
+2025-09-03 16:25:34,842 - INFO - 请求方法: GET
+2025-09-03 16:25:34,842 - INFO - 请求路径: /api/daily/today
+2025-09-03 16:25:34,842 - INFO - 请求查询参数: {}
+2025-09-03 16:25:34,842 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:25:34,842 - INFO - === HTTP响应 ===
+2025-09-03 16:25:34,842 - INFO - 响应时间: 2025-09-03 16:25:34
+2025-09-03 16:25:34,842 - INFO - 响应状态: 200
+2025-09-03 16:25:34,842 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 16:25:34,842 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:25:34,842 - INFO - ---
+2025-09-03 16:25:34,853 - INFO - === HTTP请求 ===
+2025-09-03 16:25:34,853 - INFO - 请求时间: 2025-09-03 16:25:34
+2025-09-03 16:25:34,853 - INFO - 请求方法: GET
+2025-09-03 16:25:34,854 - INFO - 请求路径: /api/daily/read
+2025-09-03 16:25:34,854 - INFO - 请求查询参数: {}
+2025-09-03 16:25:34,854 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:25:34,854 - INFO - === HTTP响应 ===
+2025-09-03 16:25:34,854 - INFO - 响应时间: 2025-09-03 16:25:34
+2025-09-03 16:25:34,854 - INFO - 响应状态: 200
+2025-09-03 16:25:34,854 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 16:25:34,854 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:25:34,854 - INFO - ---
+2025-09-03 16:29:21,730 - INFO - === HTTP请求 ===
+2025-09-03 16:29:21,731 - INFO - 请求时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,731 - INFO - 请求方法: GET
+2025-09-03 16:29:21,731 - INFO - 请求路径: /
+2025-09-03 16:29:21,731 - INFO - 请求查询参数: {}
+2025-09-03 16:29:21,731 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'cache-control': 'max-age=0', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 16:29:21,734 - INFO - === HTTP响应 ===
+2025-09-03 16:29:21,734 - INFO - 响应时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,734 - INFO - 响应状态: 200
+2025-09-03 16:29:21,735 - INFO - 响应头: {'content-length': '22509', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 16:29:21,735 - INFO - 请求耗时: 0.004秒
+2025-09-03 16:29:21,735 - INFO - ---
+2025-09-03 16:29:21,807 - INFO - === HTTP请求 ===
+2025-09-03 16:29:21,807 - INFO - 请求时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,807 - INFO - 请求方法: GET
+2025-09-03 16:29:21,807 - INFO - 请求路径: /api/daily/today
+2025-09-03 16:29:21,807 - INFO - 请求查询参数: {}
+2025-09-03 16:29:21,807 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:29:21,807 - INFO - === HTTP响应 ===
+2025-09-03 16:29:21,808 - INFO - 响应时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,808 - INFO - 响应状态: 200
+2025-09-03 16:29:21,808 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 16:29:21,808 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:29:21,808 - INFO - ---
+2025-09-03 16:29:21,819 - INFO - === HTTP请求 ===
+2025-09-03 16:29:21,819 - INFO - 请求时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,819 - INFO - 请求方法: GET
+2025-09-03 16:29:21,819 - INFO - 请求路径: /api/daily/read
+2025-09-03 16:29:21,819 - INFO - 请求查询参数: {}
+2025-09-03 16:29:21,819 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:29:21,820 - INFO - === HTTP响应 ===
+2025-09-03 16:29:21,820 - INFO - 响应时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,820 - INFO - 响应状态: 200
+2025-09-03 16:29:21,820 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 16:29:21,820 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:29:21,820 - INFO - ---
+2025-09-03 16:29:21,824 - INFO - === HTTP请求 ===
+2025-09-03 16:29:21,824 - INFO - 请求时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,824 - INFO - 请求方法: GET
+2025-09-03 16:29:21,824 - INFO - 请求路径: /api/chat/history
+2025-09-03 16:29:21,824 - INFO - 请求查询参数: {'limit': '50'}
+2025-09-03 16:29:21,824 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:29:21,824 - INFO - === HTTP响应 ===
+2025-09-03 16:29:21,824 - INFO - 响应时间: 2025-09-03 16:29:21
+2025-09-03 16:29:21,824 - INFO - 响应状态: 200
+2025-09-03 16:29:21,824 - INFO - 响应头: {'content-length': '1460', 'content-type': 'application/json'}
+2025-09-03 16:29:21,824 - INFO - 请求耗时: 0.000秒
+2025-09-03 16:29:21,824 - INFO - ---
+2025-09-03 16:30:53,982 - INFO - === HTTP请求 ===
+2025-09-03 16:30:53,982 - INFO - 请求时间: 2025-09-03 16:30:53
+2025-09-03 16:30:53,982 - INFO - 请求方法: GET
+2025-09-03 16:30:53,982 - INFO - 请求路径: /
+2025-09-03 16:30:53,982 - INFO - 请求查询参数: {}
+2025-09-03 16:30:53,983 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'cache-control': 'max-age=0', 'connection': 'close', 'upgrade-insecure-requests': '1'}
+2025-09-03 16:30:53,985 - INFO - === HTTP响应 ===
+2025-09-03 16:30:53,986 - INFO - 响应时间: 2025-09-03 16:30:53
+2025-09-03 16:30:53,986 - INFO - 响应状态: 200
+2025-09-03 16:30:53,986 - INFO - 响应头: {'content-length': '22595', 'content-type': 'text/html; charset=utf-8'}
+2025-09-03 16:30:53,986 - INFO - 请求耗时: 0.003秒
+2025-09-03 16:30:53,986 - INFO - ---
+2025-09-03 16:30:54,059 - INFO - === HTTP请求 ===
+2025-09-03 16:30:54,059 - INFO - 请求时间: 2025-09-03 16:30:54
+2025-09-03 16:30:54,059 - INFO - 请求方法: GET
+2025-09-03 16:30:54,059 - INFO - 请求路径: /api/daily/today
+2025-09-03 16:30:54,059 - INFO - 请求查询参数: {}
+2025-09-03 16:30:54,059 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:30:54,059 - INFO - === HTTP响应 ===
+2025-09-03 16:30:54,059 - INFO - 响应时间: 2025-09-03 16:30:54
+2025-09-03 16:30:54,059 - INFO - 响应状态: 200
+2025-09-03 16:30:54,059 - INFO - 响应头: {'content-length': '132', 'content-type': 'application/json'}
+2025-09-03 16:30:54,059 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:30:54,060 - INFO - ---
+2025-09-03 16:30:54,070 - INFO - === HTTP请求 ===
+2025-09-03 16:30:54,070 - INFO - 请求时间: 2025-09-03 16:30:54
+2025-09-03 16:30:54,070 - INFO - 请求方法: GET
+2025-09-03 16:30:54,070 - INFO - 请求路径: /api/daily/read
+2025-09-03 16:30:54,070 - INFO - 请求查询参数: {}
+2025-09-03 16:30:54,070 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:30:54,070 - INFO - === HTTP响应 ===
+2025-09-03 16:30:54,071 - INFO - 响应时间: 2025-09-03 16:30:54
+2025-09-03 16:30:54,071 - INFO - 响应状态: 200
+2025-09-03 16:30:54,071 - INFO - 响应头: {'content-length': '112', 'content-type': 'application/json'}
+2025-09-03 16:30:54,071 - INFO - 请求耗时: 0.000秒
+2025-09-03 16:30:54,071 - INFO - ---
+2025-09-03 16:30:54,078 - INFO - === HTTP请求 ===
+2025-09-03 16:30:54,078 - INFO - 请求时间: 2025-09-03 16:30:54
+2025-09-03 16:30:54,078 - INFO - 请求方法: GET
+2025-09-03 16:30:54,078 - INFO - 请求路径: /api/chat/history
+2025-09-03 16:30:54,078 - INFO - 请求查询参数: {'limit': '50'}
+2025-09-03 16:30:54,078 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:30:54,078 - INFO - === HTTP响应 ===
+2025-09-03 16:30:54,078 - INFO - 响应时间: 2025-09-03 16:30:54
+2025-09-03 16:30:54,078 - INFO - 响应状态: 200
+2025-09-03 16:30:54,078 - INFO - 响应头: {'content-length': '1460', 'content-type': 'application/json'}
+2025-09-03 16:30:54,078 - INFO - 请求耗时: 0.000秒
+2025-09-03 16:30:54,078 - INFO - ---
+2025-09-03 16:31:01,820 - INFO - === HTTP请求 ===
+2025-09-03 16:31:01,821 - INFO - 请求时间: 2025-09-03 16:31:01
+2025-09-03 16:31:01,821 - INFO - 请求方法: POST
+2025-09-03 16:31:01,821 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:31:01,821 - INFO - 请求查询参数: {}
+2025-09-03 16:31:01,822 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '162', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundarynb6cOeJCu5mEBuLl', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:31:01,822 - INFO - 请求体: ------WebKitFormBoundarynb6cOeJCu5mEBuLl
+Content-Disposition: form-data; name="message"
+
+我的上一句话是？
+------WebKitFormBoundarynb6cOeJCu5mEBuLl--
+
+2025-09-03 16:31:01,823 - INFO - === 流式聊天请求 ===
+2025-09-03 16:31:01,823 - INFO - 请求时间: 2025-09-03 16:31:01
+2025-09-03 16:31:01,824 - INFO - 请求方法: POST
+2025-09-03 16:31:01,824 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:31:01,824 - INFO - 请求参数: message=我的上一句话是？
+2025-09-03 16:31:01,824 - INFO - === HTTP响应 ===
+2025-09-03 16:31:01,824 - INFO - 响应时间: 2025-09-03 16:31:01
+2025-09-03 16:31:01,824 - INFO - 响应状态: 200
+2025-09-03 16:31:01,824 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:31:01,825 - INFO - 请求耗时: 0.004秒
+2025-09-03 16:31:01,825 - INFO - ---
+2025-09-03 16:31:09,126 - INFO - === 流式聊天响应 ===
+2025-09-03 16:31:09,126 - INFO - 响应时间: 2025-09-03 16:31:09
+2025-09-03 16:31:09,126 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:31:09,126 - INFO - 原始流式数据块: ['你上一', '句话是：  \n\n>', ' “我说的前一句话是什么”  \n\n你想让我帮', '你分析这句话的意思，还是只是确认它？']
+2025-09-03 16:31:09,126 - INFO - 完整回复: 你上一句话是：  
+
+> “我说的前一句话是什么”  
+
+你想让我帮你分析这句话的意思，还是只是确认它？
+2025-09-03 16:31:09,126 - INFO - ---
+2025-09-03 16:31:29,481 - INFO - === HTTP请求 ===
+2025-09-03 16:31:29,481 - INFO - 请求时间: 2025-09-03 16:31:29
+2025-09-03 16:31:29,481 - INFO - 请求方法: POST
+2025-09-03 16:31:29,481 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:31:29,481 - INFO - 请求查询参数: {}
+2025-09-03 16:31:29,481 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '168', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundarylqH5uKBLbDkmeyzn', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:31:29,481 - INFO - 请求体: ------WebKitFormBoundarylqH5uKBLbDkmeyzn
+Content-Disposition: form-data; name="message"
+
+啊没事，你能做些什么
+------WebKitFormBoundarylqH5uKBLbDkmeyzn--
+
+2025-09-03 16:31:29,482 - INFO - === 流式聊天请求 ===
+2025-09-03 16:31:29,482 - INFO - 请求时间: 2025-09-03 16:31:29
+2025-09-03 16:31:29,482 - INFO - 请求方法: POST
+2025-09-03 16:31:29,482 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:31:29,482 - INFO - 请求参数: message=啊没事，你能做些什么
+2025-09-03 16:31:29,482 - INFO - === HTTP响应 ===
+2025-09-03 16:31:29,482 - INFO - 响应时间: 2025-09-03 16:31:29
+2025-09-03 16:31:29,482 - INFO - 响应状态: 200
+2025-09-03 16:31:29,483 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:31:29,483 - INFO - 请求耗时: 0.001秒
+2025-09-03 16:31:29,483 - INFO - ---
+2025-09-03 16:31:41,543 - INFO - === 流式聊天响应 ===
+2025-09-03 16:31:41,543 - INFO - 响应时间: 2025-09-03 16:31:41
+2025-09-03 16:31:41,543 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:31:41,543 - INFO - 原始流式数据块: ['当然', '可以', '呀，阿', '哲！😊  \n我可以帮你做的事情主要有几个方面：\n\n1', '. **计划与任务管理**  \n   - 帮你梳', '理每天/每周/每月的计划。  \n   - 检查任务进', '度，总结完成情况。  \n   - 提出2-3条可执行', '的优化建议，并确认是否更新到今日计划。\n\n2. **学习与知识辅导**  \n   - 给', '你讲解复杂概念，提供步骤式解答。  \n   - 帮', '你整理笔记或总结重点。  \n   - 指', '导思路，让你更高效', '学习或解决问题。\n\n3. **生活与决策辅助**  \n  ', ' - 提供分析和建议，帮助你', '做选择。  \n   - 提醒重要事项或截止时间。  \n  ', ' - 帮你规划日常', '生活、时间安排、', '目标分解。\n\n4. **陪伴与轻松交流**  \n   - 可以像朋友一样聊天、缓解压力。  \n   -', ' 提供趣味互动、思维小游戏或灵感激发。\n\n如果你愿意，我可以', '先帮你**整理今天', '的计划或待办事项**', '，顺便看看哪些地方', '可以优化，提高效率。  \n你现在希望从**今天计划', '**开始，还是想先聊轻松的？']
+2025-09-03 16:31:41,543 - INFO - 完整回复: 当然可以呀，阿哲！😊  
+我可以帮你做的事情主要有几个方面：
+
+1. **计划与任务管理**  
+   - 帮你梳理每天/每周/每月的计划。  
+   - 检查任务进度，总结完成情况。  
+   - 提出2-3条可执行的优化建议，并确认是否更新到今日计划。
+
+2. **学习与知识辅导**  
+   - 给你讲解复杂概念，提供步骤式解答。  
+   - 帮你整理笔记或总结重点。  
+   - 指导思路，让你更高效学习或解决问题。
+
+3. **生活与决策辅助**  
+   - 提供分析和建议，帮助你做选择。  
+   - 提醒重要事项或截止时间。  
+   - 帮你规划日常生活、时间安排、目标分解。
+
+4. **陪伴与轻松交流**  
+   - 可以像朋友一样聊天、缓解压力。  
+   - 提供趣味互动、思维小游戏或灵感激发。
+
+如果你愿意，我可以先帮你**整理今天的计划或待办事项**，顺便看看哪些地方可以优化，提高效率。  
+你现在希望从**今天计划**开始，还是想先聊轻松的？
+2025-09-03 16:31:41,543 - INFO - ---
+2025-09-03 16:32:44,470 - INFO - === HTTP请求 ===
+2025-09-03 16:32:44,470 - INFO - 请求时间: 2025-09-03 16:32:44
+2025-09-03 16:32:44,470 - INFO - 请求方法: POST
+2025-09-03 16:32:44,470 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:32:44,470 - INFO - 请求查询参数: {}
+2025-09-03 16:32:44,470 - INFO - 请求头: {'host': '0.0.0.0:8080', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0', 'content-length': '168', 'accept': '*/*', 'accept-encoding': 'gzip, deflate', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'connection': 'close', 'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryTl0NBUFZcR7AFYxz', 'origin': 'http://0.0.0.0:8080', 'referer': 'http://0.0.0.0:8080/'}
+2025-09-03 16:32:44,470 - INFO - 请求体: ------WebKitFormBoundaryTl0NBUFZcR7AFYxz
+Content-Disposition: form-data; name="message"
+
+我昨天做了哪些事来着
+------WebKitFormBoundaryTl0NBUFZcR7AFYxz--
+
+2025-09-03 16:32:44,472 - INFO - === 流式聊天请求 ===
+2025-09-03 16:32:44,472 - INFO - 请求时间: 2025-09-03 16:32:44
+2025-09-03 16:32:44,472 - INFO - 请求方法: POST
+2025-09-03 16:32:44,472 - INFO - 请求路径: /api/chat/stream
+2025-09-03 16:32:44,472 - INFO - 请求参数: message=我昨天做了哪些事来着
+2025-09-03 16:32:44,472 - INFO - === HTTP响应 ===
+2025-09-03 16:32:44,472 - INFO - 响应时间: 2025-09-03 16:32:44
+2025-09-03 16:32:44,472 - INFO - 响应状态: 200
+2025-09-03 16:32:44,472 - INFO - 响应头: {'cache-control': 'no-cache', 'connection': 'keep-alive', 'x-accel-buffering': 'no', 'content-type': 'text/event-stream; charset=utf-8'}
+2025-09-03 16:32:44,472 - INFO - 请求耗时: 0.002秒
+2025-09-03 16:32:44,472 - INFO - ---
+2025-09-03 16:32:53,008 - INFO - === 流式聊天响应 ===
+2025-09-03 16:32:53,008 - INFO - 响应时间: 2025-09-03 16:32:53
+2025-09-03 16:32:53,008 - INFO - 响应状态: 200 OK (Stream)
+2025-09-03 16:32:53,008 - INFO - 原始流式数据块: ['我可以', '帮你', '回顾昨天的事情', '，但我需要你先告诉我一些线索：  \n\n- 你', '昨天主要在做工作/学习任务，还是生活日常？  \n- 有没有特别想记录', '的事项或事件？  \n\n如果你能提供大概情况，我可以帮你', '整理成清晰的回顾，总结完成情况，并指出哪些可以', '延续到今天或调整。  \n\n你想', '先大概列一下，还是让我帮你按', '类别梳理？']
+2025-09-03 16:32:53,008 - INFO - 完整回复: 我可以帮你回顾昨天的事情，但我需要你先告诉我一些线索：  
+
+- 你昨天主要在做工作/学习任务，还是生活日常？  
+- 有没有特别想记录的事项或事件？  
+
+如果你能提供大概情况，我可以帮你整理成清晰的回顾，总结完成情况，并指出哪些可以延续到今天或调整。  
+
+你想先大概列一下，还是让我帮你按类别梳理？
+2025-09-03 16:32:53,008 - INFO - ---

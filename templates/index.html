@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ MCP_NAME }} - 工具台</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --bg:#f5f5f7; --panel:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --blue:#007aff; --border:#e5e5ea; --shadow:0 8px 24px rgba(0,0,0,.08); }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif; color:var(--text); background:var(--bg); }
+        .panel { background:var(--panel); border:1px solid var(--border); box-shadow:var(--shadow); }
+        .btn { transition: background-color .15s ease, box-shadow .15s ease; }
+        .field { border:1px solid var(--border); }
+        .field:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,122,255,.15); }
+        .sidebar, .results { position:sticky; top:16px; align-self:start; }
+        .results { max-height:calc(100vh - 32px); overflow:auto; }
+        .badge { background:#f2f2f7; border:1px solid var(--border); color:var(--muted); }
+        .subtle { color:var(--muted); }
+        .divider { border-color:var(--border); }
+        .task-status { width:18px; height:18px; border:1px solid var(--border); border-radius:4px; display:inline-flex; align-items:center; justify-content:center; margin-right:8px; cursor:pointer; }
+        .task-status.done { background:#e6f7e9; border-color:#34c759; color:#34c759; }
+        .task-status.todo { background:#fafafa; }
+        .task-status.partial { background:#fff7e6; border-color:#f59e0b; color:#f59e0b; }
+        .task-status.in_progress { background:#e6f0ff; border-color:#3b82f6; color:#3b82f6; }
+        .task-status.need_help { background:#fff1f2; border-color:#ef4444; color:#ef4444; }
+        .task-status.cancelled { background:#f4f4f5; color:#9ca3af; }
+        .chat-bubble { border:1px solid var(--border); border-radius:18px; padding:12px 16px; max-width:80%; position:relative; }
+        .chat-user { background:#007aff; color:#fff; margin-left:auto; margin-right:0; }
+        .chat-assistant { background:#f2f2f7; color:#000; margin-left:0; margin-right:auto; }
+        .chat-avatar { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; margin:0 8px; }
+        .chat-avatar.user { background:#007aff; color:#fff; }
+        .chat-avatar.assistant { background:#e5e5ea; color:#8e8e93; }
+        .chat-message { display:flex; align-items:flex-start; margin-bottom:12px; }
+        .chat-message.user { flex-direction:row-reverse; }
+        .chat-message.assistant { flex-direction:row; }
+        .typing { display:inline-block; width:6px; height:6px; border-radius:999px; background:#c7c7cc; box-shadow: 10px 0 0 #c7c7cc, 20px 0 0 #c7c7cc; animation: blink 1.2s infinite ease-in-out; }
+        @keyframes blink { 0%,80%,100% { opacity:.2 } 40% { opacity:1 } }
+        .log-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; }
+        .log-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90%; max-width:800px; max-height:80vh; background:white; border-radius:12px; padding:20px; overflow:auto; }
+    </style>
+</head>
+<body>
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:#e5f0ff;color:#1d4ed8"><i class="fas fa-toolbox"></i></div>
+                <div>
+                    <div class="text-lg font-semibold">{{ MCP_NAME }}</div>
+                    <div class="text-xs subtle">版本 {{ MCP_VERSION }}</div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <div class="text-xs badge px-2 py-1 rounded">本地 · 运行中</div>
+                <button class="btn text-xs px-3 py-1.5 rounded border" style="border-color:var(--border)" onclick="viewAppLogs()">程序日志</button>
+                <button class="btn text-xs px-3 py-1.5 rounded border" style="border-color:var(--border)" onclick="viewLLMLogs()">LLM日志</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            <!-- 左侧：日程助手 -->
+            <section class="sidebar space-y-4">
+                <!-- 今日文件状态条 -->
+                <div class="panel rounded-xl p-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-base font-semibold">今日日程</div>
+                            <div id="todayInfo" class="text-xs subtle">读取中...</div>
+                        </div>
+                        <div class="space-x-2">
+                            <button id="btnCreateToday" class="btn text-xs px-3 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" onclick="createToday()">创建今日计划</button>
+                            <button class="btn text-xs px-3 py-2 rounded border" style="border-color:var(--border)" onclick="refreshDaily()">刷新</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 任务清单 -->
+                <div class="panel rounded-xl p-5">
+                    <div class="mb-3">
+                        <div class="text-base font-semibold">任务清单</div>
+                        <div class="text-xs subtle">点击状态切换；支持新增任务、追加笔记、滚动到明天</div>
+                    </div>
+                    <div id="dailyList" class="space-y-4 text-sm">
+                        <div class="text-center subtle py-8">载入中...</div>
+                    </div>
+                    <hr class="my-4 divider">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="space-y-2">
+                            <div class="subtle">新增任务</div>
+                            <input id="addTaskSection" class="field w-full rounded px-3 py-2" placeholder="目标分节前缀，如：🎯 或 今日重点任务">
+                            <input id="addTaskText" class="field w-full rounded px-3 py-2" placeholder="任务主标题文本">
+                            <button class="btn mt-1 text-xs px-3 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" onclick="onAddTask()">新增</button>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="subtle">追加笔记</div>
+                            <input id="noteSection" class="field w-full rounded px-3 py-2" placeholder="目标分节前缀，如：💡 或 学习笔记">
+                            <input id="noteText" class="field w-full rounded px-3 py-2" placeholder="一条简短记录">
+                            <button class="btn mt-1 text-xs px-3 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" onclick="onAppendNote()">追加</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn text-xs px-3 py-2 rounded border" style="border-color:var(--border)" onclick="onRollover()">将未完成任务迁移到明天</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 右侧：对话组件 + 操作结果 -->
+            <aside class="results panel rounded-xl p-5">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="text-base font-semibold">对话</div>
+                    <div class="space-x-2">
+                        <button class="btn text-xs px-3 py-1.5 rounded border" style="border-color:var(--border)" onclick="clearChat()">清空</button>
+                    </div>
+                </div>
+                <div id="chatList" class="mb-3 text-sm">
+                    <div class="chat-message assistant">
+                        <div class="chat-avatar assistant">🤖</div>
+                        <div class="chat-bubble chat-assistant">
+                            <div class="whitespace-pre-wrap">你好！我是你的私人秘书、好友兼老师。我可以帮你规划今天的任务，检查完成情况，或者和你聊聊今天做了什么。有什么我可以帮助你的吗？</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-2">
+                    <input id="chatInput" class="field flex-1 rounded px-3 py-2 text-sm" placeholder="说点什么，例如：帮我安排今天下午…">
+                    <button id="chatSend" class="btn text-xs px-3 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" onclick="sendChat()">发送</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 日志查看模态框 -->
+    <div id="logModal" class="log-modal" onclick="closeLogs()">
+        <div class="log-content" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold">日志查看</h3>
+                <button class="btn text-xs px-3 py-1.5 rounded border" style="border-color:var(--border)" onclick="closeLogs()">关闭</button>
+            </div>
+            <div id="logContent" class="text-sm font-mono whitespace-pre-wrap bg-gray-50 p-4 rounded border" style="max-height:60vh; overflow:auto;">
+                加载中...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== Daily APIs =====
+        async function fetchJSON(url, opts) {
+            const res = await fetch(url, opts);
+            return await res.json();
+        }
+
+        function statusMarkToClass(mark) {
+            const map = { '[ ]':'todo', '[x]':'done', '[~]':'partial', '[!]':'cancelled', '[>]':'in_progress', '[?]':'need_help' };
+            return map[mark] || 'todo';
+        }
+
+        const STATUS_CYCLE = ['todo','in_progress','partial','need_help','cancelled','done'];
+        function nextStatus(s) { const i = STATUS_CYCLE.indexOf(s); return STATUS_CYCLE[(i+1)%STATUS_CYCLE.length]; }
+
+        async function loadTodayInfo() {
+            const info = await fetchJSON('/api/daily/today');
+            const el = document.getElementById('todayInfo');
+            const btn = document.getElementById('btnCreateToday');
+            if (info.exists) { el.textContent = `${info.date} · 已存在 · ${info.path}`; btn.style.display='none'; }
+            else { el.textContent = `${info.date} · 尚未创建`; btn.style.display='inline-block'; }
+        }
+
+        async function createToday() { await fetchJSON('/api/daily/create', { method:'POST' }); await loadTodayInfo(); await refreshDaily(); }
+
+        async function refreshDaily() {
+            const data = await fetchJSON('/api/daily/read');
+            renderDaily(data);
+        }
+
+        function renderDaily(data) {
+            const box = document.getElementById('dailyList');
+            box.innerHTML = '';
+            if (!data || !data.exists) { box.innerHTML = '<div class="text-center subtle py-8">今日文件不存在，请先创建</div>'; return; }
+            (data.sections || []).forEach(sec => {
+                const secDiv = document.createElement('div');
+                secDiv.innerHTML = `
+                    <div class="font-medium mb-2">${sec.title}</div>
+                    <div class="space-y-2" data-sec-title="${sec.title}"></div>
+                `;
+                const list = secDiv.querySelector('div[data-sec-title]');
+                (sec.tasks || []).forEach(t => {
+                    const cls = `task-status ${t.status}`;
+                    const row = document.createElement('div');
+                    row.className = 'flex items-start';
+                    row.innerHTML = `
+                        <div class="${cls}" title="点击切换状态" data-task="${escapeHtml(t.text)}"></div>
+                        <div class="leading-5">${escapeHtml(t.text)}</div>
+                    `;
+                    row.querySelector('.task-status').addEventListener('click', async () => {
+                        const newStatus = nextStatus(t.status);
+                        const fd = new FormData(); fd.append('task_text', t.text); fd.append('status', newStatus);
+                        const res = await fetch('/api/daily/set_status', { method:'POST', body:fd });
+                        const j = await res.json(); if (j.updated) { await refreshDaily(); }
+                    });
+                    list.appendChild(row);
+                });
+                box.appendChild(secDiv);
+            });
+            if (!box.innerHTML.trim()) box.innerHTML = '<div class="text-center subtle py-8">暂无可解析的任务</div>';
+        }
+
+        async function onAddTask() {
+            const section = document.getElementById('addTaskSection').value.trim();
+            const text = document.getElementById('addTaskText').value.trim();
+            if (!section || !text) { alert('请输入分节前缀与任务内容'); return; }
+            const fd = new FormData(); fd.append('section_title', section); fd.append('task_text', text); fd.append('status', 'todo');
+            const res = await fetch('/api/daily/add_task', { method:'POST', body:fd });
+            const j = await res.json(); if (j.inserted) { document.getElementById('addTaskText').value=''; await refreshDaily(); }
+        }
+
+        async function onAppendNote() {
+            const section = document.getElementById('noteSection').value.trim();
+            const text = document.getElementById('noteText').value.trim();
+            if (!section || !text) { alert('请输入分节前缀与笔记内容'); return; }
+            const fd = new FormData(); fd.append('section_title', section); fd.append('note_line', text);
+            const res = await fetch('/api/daily/append_note', { method:'POST', body:fd });
+            const j = await res.json(); if (j.appended) { document.getElementById('noteText').value=''; await refreshDaily(); }
+        }
+
+        async function onRollover() {
+            const j = await fetchJSON('/api/daily/rollover', { method:'POST' });
+            alert(`已迁移 ${j.moved || 0} 项到明天`);
+        }
+
+        // ===== Chat =====
+        let historyNextBefore = null;
+        let loadingHistory = false;
+        let hasAnyHistory = false;
+
+        function getChatList(){ return document.getElementById('chatList'); }
+        function createChatMessage(role, text=''){
+            const messageDiv=document.createElement('div');
+            messageDiv.className = `chat-message ${role}`;
+            const avatar = document.createElement('div');
+            avatar.className = `chat-avatar ${role}`;
+            avatar.innerHTML = role === 'user' ? '👤' : '🤖';
+            const bubble = document.createElement('div');
+            bubble.className = role==='user' ? 'chat-bubble chat-user' : 'chat-bubble chat-assistant';
+            bubble.innerHTML = `<div class="whitespace-pre-wrap">${escapeHtml(text)}</div>`;
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(bubble);
+            return {messageDiv, bubble};
+        }
+        function addChatBubble(role, text=''){
+            const wrap=getChatList();
+            const {messageDiv, bubble} = createChatMessage(role, text);
+            wrap.appendChild(messageDiv);
+            wrap.scrollTop = wrap.scrollHeight;
+            return bubble;
+        }
+        function setBubbleText(div, text){ div.querySelector('div').innerText = text; const wrap=getChatList(); wrap.scrollTop=wrap.scrollHeight; }
+        function setTyping(div, on){ div.querySelector('div').innerHTML = on? '<span class="typing"></span>' : div.querySelector('div').innerHTML; }
+
+        function renderHistory(items, mode='append'){
+            const list = getChatList();
+            const prevScrollHeight = list.scrollHeight;
+            const prevTop = list.scrollTop;
+            const frag = document.createDocumentFragment();
+            items.forEach(m => { const {messageDiv} = createChatMessage(m.role, m.content); frag.appendChild(messageDiv); });
+            if(mode==='prepend'){
+                list.insertBefore(frag, list.firstChild);
+                const newScrollHeight = list.scrollHeight;
+                list.scrollTop = newScrollHeight - prevScrollHeight + prevTop;
+            }else{
+                list.appendChild(frag);
+                list.scrollTop = list.scrollHeight;
+            }
+        }
+
+        async function loadHistory(initial=false){
+            if(loadingHistory) return; loadingHistory = true;
+            try{
+                const qs = new URLSearchParams();
+                qs.set('limit','50');
+                if(historyNextBefore!==null) qs.set('before', String(historyNextBefore));
+                const j = await fetchJSON(`/api/chat/history?${qs.toString()}`);
+                if(j && j.success){
+                    const items = j.history || [];
+                    hasAnyHistory = hasAnyHistory || items.length>0;
+                    if(initial){
+                        // 如果有历史，清空默认欢迎语
+                        if(items.length>0){ getChatList().innerHTML=''; }
+                        renderHistory(items, 'append');
+                    }else{
+                        renderHistory(items, 'prepend');
+                    }
+                    historyNextBefore = j.next_before;
+                }
+            }finally{ loadingHistory = false; }
+        }
+
+        function attachInfiniteScroll(){
+            const list = getChatList();
+            list.addEventListener('scroll', async () => {
+                if(list.scrollTop <= 0 && historyNextBefore !== null && !loadingHistory){
+                    await loadHistory(false);
+                }
+            });
+        }
+
+        async function sendChat(){
+            const input=document.getElementById('chatInput'); const btn=document.getElementById('chatSend'); const msg=input.value.trim(); if(!msg) return;
+            addChatBubble('user', msg); input.value=''; btn.disabled=true; btn.textContent='发送中…';
+            const asst=addChatBubble('assistant',''); setTyping(asst,true);
+            try{
+                const fd=new FormData(); fd.append('message', msg);
+                const res = await fetch('/api/chat/stream',{ method:'POST', body:fd });
+                const reader = res.body.getReader(); const decoder=new TextDecoder('utf-8'); let acc=''; let full='';
+                while(true){ const {value, done}=await reader.read(); if(done) break; acc += decoder.decode(value, {stream:true});
+                    const parts = acc.split('\n\n'); acc = parts.pop();
+                    for(const p of parts){ if(!p.trim()) continue; const line = p.replace(/^data:\s*/,''); if(line==='[DONE]') continue; try{ const obj=JSON.parse(line); if(obj.delta){ full += obj.delta; setBubbleText(asst, full); } }catch(e){ /* ignore */ } }
+                }
+                setBubbleText(asst, full || '');
+            }catch(e){ setBubbleText(asst, '网络错误'); }
+            finally{ btn.disabled=false; btn.textContent='发送'; }
+        }
+        function clearChat(){ 
+            getChatList().innerHTML=`
+                <div class="chat-message assistant">
+                    <div class="chat-avatar assistant">🤖</div>
+                    <div class="chat-bubble chat-assistant">
+                        <div class="whitespace-pre-wrap">你好！我是你的私人秘书、好友兼老师。我可以帮你规划今天的任务，检查完成情况，或者和你聊聊今天做了什么。有什么我可以帮助你的吗？</div>
+                    </div>
+                </div>
+            `; 
+        }
+
+        // ===== 日志查看 =====
+        async function viewAppLogs() {
+            document.getElementById('logModal').style.display = 'block';
+            document.getElementById('logContent').textContent = '加载中...';
+            
+            try {
+                const response = await fetch('/logs/app_api.log');
+                if (response.ok) {
+                    const logText = await response.text();
+                    document.getElementById('logContent').textContent = logText;
+                } else {
+                    document.getElementById('logContent').textContent = '无法加载程序API日志文件';
+                }
+            } catch (e) {
+                document.getElementById('logContent').textContent = `加载程序API日志失败: ${e.message}`;
+            }
+        }
+
+        async function viewLLMLogs() {
+            document.getElementById('logModal').style.display = 'block';
+            document.getElementById('logContent').textContent = '加载中...';
+            
+            try {
+                const response = await fetch('/logs/llm_api.log');
+                if (response.ok) {
+                    const logText = await response.text();
+                    document.getElementById('logContent').textContent = logText;
+                } else {
+                    document.getElementById('logContent').textContent = '无法加载LLM API日志文件';
+                }
+            } catch (e) {
+                document.getElementById('logContent').textContent = `加载LLM API日志失败: ${e.message}`;
+            }
+        }
+
+        function closeLogs() {
+            document.getElementById('logModal').style.display = 'none';
+        }
+
+        function escapeHtml(str) { return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s])); }
+
+        // init
+        (async function init(){
+            await loadTodayInfo();
+            await refreshDaily();
+            attachInfiniteScroll();
+            await loadHistory(true);
+        })();
+        document.getElementById('chatInput').addEventListener('keydown', (e)=>{ if(e.key==='Enter') sendChat(); });
+    </script>
+</body>
+</html> 
