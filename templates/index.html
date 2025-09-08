@@ -6,6 +6,7 @@
     <title>{{ MCP_NAME }} - 工具台</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
     <style>
         :root { --bg:#f5f5f7; --panel:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --blue:#007aff; --border:#e5e5ea; --shadow:0 8px 24px rgba(0,0,0,.08); }
         body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif; color:var(--text); background:var(--bg); }
@@ -32,6 +33,11 @@
         .chat-avatar.user { background:#007aff; color:#fff; }
         .chat-avatar.assistant { background:#e5e5ea; color:#8e8e93; }
         .chat-message { display:flex; align-items:flex-start; margin-bottom:12px; }
+        .chat-bubble .markdown-content { line-height: 1.6; }
+        .chat-bubble .markdown-content p { margin-bottom: 0.75em; }
+        .chat-bubble .markdown-content ul, .chat-bubble .markdown-content ol { margin-left: 1.5em; margin-bottom: 0.75em; }
+        .chat-bubble .markdown-content li { margin-bottom: 0.25em; }
+        .chat-bubble .markdown-content h1, .chat-bubble .markdown-content h2, .chat-bubble .markdown-content h3, .chat-bubble .markdown-content h4, .chat-bubble .markdown-content h5, .chat-bubble .markdown-content h6 { margin-top: 1em; margin-bottom: 0.5em; font-weight: bold; }
         .chat-message.user { flex-direction:row-reverse; }
         .chat-message.assistant { flex-direction:row; }
         .typing { display:inline-block; width:6px; height:6px; border-radius:999px; background:#c7c7cc; box-shadow: 10px 0 0 #c7c7cc, 20px 0 0 #c7c7cc; animation: blink 1.2s infinite ease-in-out; }
@@ -118,7 +124,7 @@
                     <div class="chat-message assistant">
                         <div class="chat-avatar assistant">🤖</div>
                         <div class="chat-bubble chat-assistant">
-                            <div class="whitespace-pre-wrap">你好！我是你的私人秘书、好友兼老师。我可以帮你规划今天的任务，检查完成情况，或者和你聊聊今天做了什么。有什么我可以帮助你的吗？</div>
+                            <div class="markdown-content">${escapeAndConvertMarkdown('你好！我是你的私人秘书、好友兼老师。我可以帮你规划今天的任务，检查完成情况，或者和你聊聊今天做了什么。有什么我可以帮助你的吗？', true)}</div>
                         </div>
                     </div>
                 </div>
@@ -234,7 +240,7 @@
         let hasAnyHistory = false;
 
         function getChatList(){ return document.getElementById('chatList'); }
-        function createChatMessage(role, text=''){
+        function createChatMessage(role, text='', isMarkdown=true){
             const messageDiv=document.createElement('div');
             messageDiv.className = `chat-message ${role}`;
             const avatar = document.createElement('div');
@@ -242,19 +248,19 @@
             avatar.innerHTML = role === 'user' ? '👤' : '🤖';
             const bubble = document.createElement('div');
             bubble.className = role==='user' ? 'chat-bubble chat-user' : 'chat-bubble chat-assistant';
-            bubble.innerHTML = `<div class="whitespace-pre-wrap">${escapeHtml(text)}</div>`;
+            bubble.innerHTML = `<div class="markdown-content">${escapeAndConvertMarkdown(text, isMarkdown)}</div>`;
             messageDiv.appendChild(avatar);
             messageDiv.appendChild(bubble);
             return {messageDiv, bubble};
         }
-        function addChatBubble(role, text=''){
+        function addChatBubble(role, text='', isMarkdown=true){
             const wrap=getChatList();
-            const {messageDiv, bubble} = createChatMessage(role, text);
+            const {messageDiv, bubble} = createChatMessage(role, text, isMarkdown);
             wrap.appendChild(messageDiv);
             wrap.scrollTop = wrap.scrollHeight;
             return bubble;
         }
-        function setBubbleText(div, text){ div.querySelector('div').innerText = text; const wrap=getChatList(); wrap.scrollTop=wrap.scrollHeight; }
+        function setBubbleText(div, text, isMarkdown=true){ div.querySelector('div').innerHTML = isMarkdown ? markdownConverter.makeHtml(text) : escapeHtml(text); const wrap=getChatList(); wrap.scrollTop=wrap.scrollHeight; }
         function setTyping(div, on){ div.querySelector('div').innerHTML = on? '<span class="typing"></span>' : div.querySelector('div').innerHTML; }
 
         function renderHistory(items, mode='append'){
@@ -262,7 +268,7 @@
             const prevScrollHeight = list.scrollHeight;
             const prevTop = list.scrollTop;
             const frag = document.createDocumentFragment();
-            items.forEach(m => { const {messageDiv} = createChatMessage(m.role, m.content); frag.appendChild(messageDiv); });
+            items.forEach(m => { const {messageDiv} = createChatMessage(m.role, m.content, m.role === 'assistant'); frag.appendChild(messageDiv); });
             if(mode==='prepend'){
                 list.insertBefore(frag, list.firstChild);
                 const newScrollHeight = list.scrollHeight;
@@ -306,7 +312,7 @@
 
         async function sendChat(){
             const input=document.getElementById('chatInput'); const btn=document.getElementById('chatSend'); const msg=input.value.trim(); if(!msg) return;
-            addChatBubble('user', msg); input.value=''; btn.disabled=true; btn.textContent='发送中…';
+            addChatBubble('user', msg, false); input.value=''; btn.disabled=true; btn.textContent='发送中…';
             const asst=addChatBubble('assistant',''); setTyping(asst,true);
             try{
                 const fd=new FormData(); fd.append('message', msg);
@@ -314,9 +320,9 @@
                 const reader = res.body.getReader(); const decoder=new TextDecoder('utf-8'); let acc=''; let full='';
                 while(true){ const {value, done}=await reader.read(); if(done) break; acc += decoder.decode(value, {stream:true});
                     const parts = acc.split('\n\n'); acc = parts.pop();
-                    for(const p of parts){ if(!p.trim()) continue; const line = p.replace(/^data:\s*/,''); if(line==='[DONE]') continue; try{ const obj=JSON.parse(line); if(obj.delta){ full += obj.delta; setBubbleText(asst, full); } }catch(e){ /* ignore */ } }
+                    for(const p of parts){ if(!p.trim()) continue; const line = p.replace(/^data:\s*/,''); if(line==='[DONE]') continue; try{ const obj=JSON.parse(line); if(obj.delta){ full += obj.delta; setBubbleText(asst, full, true); } }catch(e){ /* ignore */ } }
                 }
-                setBubbleText(asst, full || '');
+                setBubbleText(asst, full || '', true);
             }catch(e){ setBubbleText(asst, '网络错误'); }
             finally{ btn.disabled=false; btn.textContent='发送'; }
         }
@@ -325,7 +331,7 @@
                 <div class="chat-message assistant">
                     <div class="chat-avatar assistant">🤖</div>
                     <div class="chat-bubble chat-assistant">
-                        <div class="whitespace-pre-wrap">你好！我是你的私人秘书、好友兼老师。我可以帮你规划今天的任务，检查完成情况，或者和你聊聊今天做了什么。有什么我可以帮助你的吗？</div>
+                        <div class="markdown-content">${escapeAndConvertMarkdown('你好！我是你的私人秘书、好友兼老师。我可以帮你规划今天的任务，检查完成情况，或者和你聊聊今天做了什么。有什么我可以帮助你的吗？', true)}</div>
                     </div>
                 </div>
             `; 
@@ -372,6 +378,15 @@
 
         function escapeHtml(str) { return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s])); }
 
+        const markdownConverter = new showdown.Converter();
+        function escapeAndConvertMarkdown(str, isMarkdown) {
+            if (isMarkdown) {
+                return markdownConverter.makeHtml(str);
+            } else {
+                return escapeHtml(str);
+            }
+        }
+
         // init
         (async function init(){
             await loadTodayInfo();
@@ -379,6 +394,11 @@
             attachInfiniteScroll();
             await loadHistory(true);
         })();
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                getChatList().scrollTop = getChatList().scrollHeight;
+            }, 100); // Small delay to ensure all content is rendered
+        });
         document.getElementById('chatInput').addEventListener('keydown', (e)=>{ if(e.key==='Enter') sendChat(); });
     </script>
 </body>

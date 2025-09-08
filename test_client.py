@@ -9,7 +9,7 @@ class MCPTestClient:
         self.base_url = base_url
     
     def test_server_info(self):
-        """测试服务器信息"""
+        """测试服务器信·息"""
         try:
             response = requests.get(f"{self.base_url}/")
             print("服务器信息:")

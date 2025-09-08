@@ -13,7 +13,7 @@ import daily_tools as dt
 # 配置日志记录
 def setup_logging():
     """设置日志记录"""
-    # 创建logs目录
+    # 创建logs目录·
     os.makedirs("logs", exist_ok=True)
     
     # 1. 程序内部API调用日志
